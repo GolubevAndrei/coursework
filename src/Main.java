@@ -1,6 +1,10 @@
 public class Main {
     static Employee[] employees = new Employee[10];
+    static double SalaryIndexing = 20;
     public static void main(String[] args) {
+
+
+
         employees[0] = new Employee("Vasilii", "Sergeevich", "Vilkin", 1, 15000.0);
         employees[1] = new Employee("Vladimir", "Vasilievich", "Gorshkov", 2, 18000.0);
         employees[2] = new Employee("Sergey", "Yusupovich", "Yusupov", 3, 35000.0);
@@ -17,6 +21,8 @@ public class Main {
         System.out.println(getMaxSalaryEmployee());
         System.out.println(getAverageSalary());
         FullNamePrint();
+        SalaryUp();
+        EmployeePrint();
 
     }
     public static void EmployeePrint() {
@@ -90,6 +96,13 @@ public class Main {
         for (Employee employee : employees) {
             if (employee != null) {
                 System.out.println(employee.getFullName());
+            }
+        }
+    }
+    public static void SalaryUp() {
+        for (Employee employee : employees) {
+            if (employee != null) {
+                employee.setSalary(employee.getSalary() + (employee.getSalary() * SalaryIndexing/100));
             }
         }
     }
