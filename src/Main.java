@@ -3,7 +3,7 @@ public class Main {
     static double SalaryIndexing = 20;
     public static void main(String[] args) {
 
-
+        double salaryLevel = 20000;
 
         employees[0] = new Employee("Vasilii", "Sergeevich", "Vilkin", 1, 15000.0);
         employees[1] = new Employee("Vladimir", "Vasilievich", "Gorshkov", 2, 18000.0);
@@ -27,6 +27,11 @@ public class Main {
         EmployeePrint();
         System.out.println(getMinSalaryEmployee().getDepartment());
         System.out.println(getMaxSalaryEmployee().getDepartment());
+        FullDataPrint();
+        System.out.println("Зарплата менее " + salaryLevel + " у сотрудников:");
+        getDownSalaryEmployee(salaryLevel);
+        System.out.println("Зарплата больше " + salaryLevel + " у сотрудников:");
+        getUpSalaryEmployee(salaryLevel);
 
     }
     public static void EmployeePrint() {
@@ -77,6 +82,28 @@ public class Main {
         return minEmpl;
     }
 
+    public static void getDownSalaryEmployee(double salaryLevel) {
+     for (int i = 0; i < employees.length; i++) {
+            if (employees[i] != null) {
+                if (salaryLevel > employees[i].getSalary()) {
+                    System.out.println(employees[i].getFullData());
+
+                }
+            }
+        }
+    }
+
+    public static void getUpSalaryEmployee(double salaryLevel) {
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i] != null) {
+                if (salaryLevel <= employees[i].getSalary()) {
+                    System.out.println(employees[i].getFullData());
+
+                }
+            }
+        }
+    }
+
     public static Employee getMaxSalaryEmployee() {
         double maxSalary = -1;
         Employee maxEmpl = null;
@@ -125,6 +152,14 @@ public class Main {
         for (Employee employee : employees) {
             if (employee != null) {
                 System.out.println(employee.getFullName());
+            }
+        }
+    }
+
+    public static void FullDataPrint() {
+        for (Employee employee : employees) {
+            if (employee != null) {
+                System.out.println(employee.getFullData());
             }
         }
     }

@@ -53,4 +53,8 @@ public class Employee {
     public String getFullName() {
         return getFistName() + " " + getLastName() + " " + getMiddleName();
     }
+
+    public String getFullData() {
+        return getId() + " " + getFistName() + " " + getLastName() + " " + getMiddleName() + " " + getSalary();
+    }
 }
