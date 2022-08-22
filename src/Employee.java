@@ -2,17 +2,20 @@ public class Employee {
     private String fistName;
     private String lastName;
     private String middleName;
+    private int department;
+    private final int id;
+    private double salary;
+    private static int accumulator;
 
-    private String department;
 
-    private int id;
 
-    private int salary;
-
-    public Employee(String fistName, String lastName, String middleName) {
+    public Employee(String fistName, String lastName, String middleName, int department, double salary) {
         this.fistName = fistName;
         this.lastName = lastName;
         this.middleName = middleName;
+        this.department = department;
+        this.salary = salary;
+        id = accumulator++;
     }
 
     public String getFistName() {
@@ -30,20 +33,20 @@ public class Employee {
     public int getId() {
         return id;
     }
-    public int getSalary() {
+    public double getSalary() {
         return salary;
     }
-    public void setSalary(int salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
     }
-    public String getDepartment() {
+    public int getDepartment() {
         return department;
     }
 
-    public void setDepartment(String department) {
+    public void setDepartment(int department) {
         this.department = department;
     }
     public String toString() {
-        return getFistName() + " " + getLastName() + " " + getMiddleName();
+        return getId() + " " + getFistName() + " " + getLastName() + " " + getMiddleName() + " " + getDepartment() + " " + getSalary();
     }
 }
