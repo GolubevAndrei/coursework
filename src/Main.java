@@ -15,6 +15,8 @@ public class Main {
         System.out.println(getWageFund());
         System.out.println(getMinSalaryEmployee());
         System.out.println(getMaxSalaryEmployee());
+        System.out.println(getAverageSalary());
+        FullNamePrint();
 
     }
     public static void EmployeePrint() {
@@ -75,5 +77,20 @@ public class Main {
             }
         }
         return maxEmpl;
+    }
+    public static double getAverageSalary() {
+        if (employees.length != 0) {
+            return getWageFund() / employees.length;
+        } else {
+            return 0;
+        }
+
+    }
+    public static void FullNamePrint() {
+        for (Employee employee : employees) {
+            if (employee != null) {
+                System.out.println(employee.getFullName());
+            }
+        }
     }
 }

@@ -49,4 +49,8 @@ public class Employee {
     public String toString() {
         return getId() + " " + getFistName() + " " + getLastName() + " " + getMiddleName() + " " + getDepartment() + " " + getSalary();
     }
+
+    public String getFullName() {
+        return getFistName() + " " + getLastName() + " " + getMiddleName();
+    }
 }
